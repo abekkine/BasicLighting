@@ -1,16 +1,5 @@
-#BasicLighting#
+# BasicLighting
 
+A 2D lighting system using GLUT & C/C++.
 
-A 2D lighting system using OpenGL, LWJGL, Java.
-
----
-
-![Screenshot](http://i.imgur.com/H0yqsfY.png "Screenshot")
-
-
-You can find a cool video [here](http://www.youtube.com/watch?v=nSf1MpsWKig)
-
----
-
-#Halp Pls#
-I really don't know what I'm doing, so there's bound to be many ways to improve this code. PLEASE help improve it. Thank you.
+This fork is an attempt to port Jacob Brunson's original Java sources into a GLUT C/C++ version. Since original author deserves all the credit, i preferred to modify from Java sources, rather than starting from scratch.
