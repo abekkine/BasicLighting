@@ -6,6 +6,8 @@ Application::Application() {
 
 	width_ = Config::SCREEN_WIDTH;
 	height_ = Config::SCREEN_HEIGHT;
+
+	display_ = Display::Instance();
 }
 
 Application::~Application() {
@@ -21,12 +23,14 @@ EdgeShadow* Application::castEdgeShadow( Light* light ) {
 
 void Application::render() {
 
-	// TODO : display_clear	
+	// Clear screen.
+	display_->clear();
 
 	std::vector< Light* >::iterator iLight;
 	for (iLight = lights_.begin(); iLight != lights_.end(); ++iLight) {
 
-		// TODO : display_set_stencil
+		// Start rendering to stencil buffer.
+		display_->setStencil();
 
 		std::vector< Block* >::iterator iBlock;
 		for (iBlock = blocks_.begin(); iBlock != blocks_.end(); ++iBlock) {
@@ -39,20 +43,23 @@ void Application::render() {
 				EdgeShadow* edge_shadow = 0;
 				edge_shadow = castEdgeShadow( *iLight );
 
-				edge_shadow = edge_shadow;
-
 				// TODO : display_draw_edge_shadow
+				display_->drawEdgeShadow( edge_shadow );
 			}
 		}
 
-		// TODO : display_reset_stencil
+		// End rendering to stencil buffer.
+		display_->resetStencil();
 
-		// TODO : display_execute_shader
+		// Run shader program for given light.
+		display_->runShader( *iLight );
 	}
 
-	// TODO : display_draw_blocks
+	// Draw all blocks over the scene.
+	display_->drawBlocks( blocks_ );
 
-	// TODO : display_refresh
+	// Refresh display.
+	display_->refresh();
 }
 
 int Application::randomInRange(int min, int max) {
@@ -91,24 +98,29 @@ void Application::setUpObjects() {
 
 void Application::initialize() {
 
-	// TODO : display_open
+	// Open graphics window & mode, etc.
+	display_->open();
 
-	// TODO : display_init_shader
+	// Initialize fragment shader.
+	display_->initShader();
 
-	// TODO : display_initialize
+	// Complete graphics initialization.
+	display_->initialize();
 }
 
 void Application::cleanup() {
 
-	// TODO : display_delete_shader
+	// Delete and free shader program.
+	display_->deleteShader();
 
-	// TODO : display_destroy
+	// Delete and destroy display.
+	display_->destroy();
 }
 
 bool Application::isCloseRequested() {
 
-	// TODO : display_quit_request
-	return true;
+	// Return quit request from display object.
+	return display_->quitRequest();
 }
 
 
