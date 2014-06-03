@@ -1,3 +1,5 @@
+#include "Config.h"
+
 #include "Application.h"
 
 Application::Application() {
@@ -16,8 +18,6 @@ EdgeShadow* Application::castEdgeShadow( Light* light ) {
 
 	return new EdgeShadow();
 }
-
-
 
 void Application::render() {
 

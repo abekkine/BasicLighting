@@ -3,21 +3,7 @@
 
 #include <vector>
 
-// TODO : Implement properly.
-class Edge {
-
-public:
-	Edge() {}
-	~Edge() {}
-};
-
-// TODO : Implement properly.
-class EdgeShadow {
-
-public:
-	EdgeShadow() {}
-	~EdgeShadow() {}
-};
+#include "Edge.h"
 
 class Block {
 

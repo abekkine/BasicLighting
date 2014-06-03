@@ -1,6 +1,15 @@
 TARGET=lights.bin
-SOURCES=Main.cpp Application.cpp Block.cpp Light.cpp
+
+SOURCES=Main.cpp \
+		Application.cpp \
+		Block.cpp \
+		Light.cpp \
+		Edge.cpp \
+		EdgeShadow.cpp \
+		Config.cpp
+
 OBJECTS=$(SOURCES:%.cpp=%.o)
+
 FLAGS=-Wall -Wextra -Werror -Wfatal-errors
 CCLIBS=
 
