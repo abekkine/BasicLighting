@@ -1,3 +1,4 @@
 name: Mostly Development
 markdown: redcarpet
 pygments: true
+baseurl: /BasicLighting
