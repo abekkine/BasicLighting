@@ -26,3 +26,4 @@ In addition we have,
  * A better functional breakdown (i hope),
  * Comment lines for visualization.
 
+You may find the rest in github [repository](https://github.com/abekkine/BasicLighting/tree/a810233affe78bf2a78eab9175423acdeec2535d) page.
