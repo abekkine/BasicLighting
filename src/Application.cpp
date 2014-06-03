@@ -14,13 +14,6 @@ Application::~Application() {
 
 }
 
-EdgeShadow* Application::castEdgeShadow( Light* light ) {
-
-	light = light;
-
-	return new EdgeShadow();
-}
-
 void Application::render() {
 
 	// Clear screen.
@@ -40,8 +33,8 @@ void Application::render() {
 			std::vector< Edge* >::iterator iEdge;
 			for (iEdge = edges.begin(); iEdge != edges.end(); ++iEdge) {
 
-				EdgeShadow* edge_shadow = 0;
-				edge_shadow = castEdgeShadow( *iLight );
+				EdgeShadow* edge_shadow;
+				edge_shadow = (*iEdge)->castShadow( *iLight );
 
 				// TODO : display_draw_edge_shadow
 				display_->drawEdgeShadow( edge_shadow );

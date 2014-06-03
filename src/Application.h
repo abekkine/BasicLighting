@@ -19,7 +19,6 @@ public:
 	void initialize();
 	void cleanup();
 	bool isCloseRequested();
-	EdgeShadow* castEdgeShadow( Light* light );
 	int randomInRange(int min, int max);
 
 private:
