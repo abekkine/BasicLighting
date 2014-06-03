@@ -3,7 +3,6 @@ layout: post
 title:  "Good Place to Start"
 date:   2014-06-02 23:40
 ---
-
 It's best (IMHO) to start with logic first, putting glut, shaders & stuff aside.
 We aim to obtain a compiling C/C++ code first, before adding visualization.
 We will be working on linux platform (i'm specifically working on ubuntu 12.04.4 LTS, 
