@@ -9,7 +9,8 @@ SOURCES=Main.cpp \
 		Config.cpp \
 		Display.cpp \
 		Vector2f.cpp \
-		Color.cpp
+		Color.cpp \
+		Util.cpp
 
 OBJECTS=$(SOURCES:%.cpp=%.o)
 

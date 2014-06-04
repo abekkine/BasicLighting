@@ -1,3 +1,6 @@
+#include "Util.h"
+#include "Config.h"
+
 #include "Light.h"
 
 Light::Light() {
@@ -14,7 +17,10 @@ void Light::randomColor() {
 }
 
 void Light::randomLocation() {
-	// TODO : set random location.
-	location_.set(1.2, 3.4);
+
+	float x = Util::randomInRange(0.0, Config::SCREEN_WIDTH);
+	float y = Util::randomInRange(0.0, Config::SCREEN_HEIGHT);
+
+	location_.set(x, y);
 }
 
