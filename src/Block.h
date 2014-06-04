@@ -9,15 +9,15 @@ class Block {
 
 public:
 	Block();
+	Block(int x, int y, int w, int h);
 	~Block();
 
-	void location(int x, int y);
-	void size(int width, int height);
 	std::vector< Edge* >& getEdges();
 
 private:
+	void location(int x, int y);
+	void size(int width, int height);
 	void deleteEdges();
-	void updateEdges();
 	void setEdges();
 	void randomLocation();	
 

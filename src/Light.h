@@ -9,6 +9,7 @@ class Light {
 public:
 	Light();
 	~Light();
+    Vector2f& location();
 
 private:
 	void randomColor();

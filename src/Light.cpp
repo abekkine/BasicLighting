@@ -13,6 +13,11 @@ Light::Light() {
 Light::~Light() {
 }
 
+Vector2f& Light::location() {
+
+    return location_;
+}
+
 void Light::randomColor() {
 
 	// Set random color.

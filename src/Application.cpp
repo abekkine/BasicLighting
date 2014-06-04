@@ -1,3 +1,4 @@
+#include "Util.h"
 #include "Config.h"
 
 #include "Application.h"
@@ -12,6 +13,7 @@ Application::Application() {
 
 Application::~Application() {
 
+	display_->destroy();
 }
 
 void Application::render() {
@@ -55,15 +57,10 @@ void Application::render() {
 	display_->refresh();
 }
 
-int Application::randomInRange(int min, int max) {
-	// TODO :
-	return max-min;
-}
-
 void Application::setUpObjects() {
 
 	// Random number of lights in a given range.
-	int lightCount = randomInRange(Config::MIN_LIGHTS, Config::MAX_LIGHTS);
+	int lightCount = Util::randomInRange(Config::MIN_LIGHTS, Config::MAX_LIGHTS);
 
 	// Create lights.
 	for (int i = 1; i <= lightCount; i++) {
@@ -73,7 +70,7 @@ void Application::setUpObjects() {
 	}
 
 	// Random number of blocks in a given range.
-	int blockCount = randomInRange(Config::MIN_BLOCKS, Config::MAX_BLOCKS);
+	int blockCount = Util::randomInRange(Config::MIN_BLOCKS, Config::MAX_BLOCKS);
 
 	// Create blocks.
 	for (int i = 1; i <= blockCount; i++) {

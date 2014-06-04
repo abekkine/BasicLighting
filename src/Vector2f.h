@@ -9,6 +9,11 @@ public:
 	~Vector2f();
 	
 	void set(float x, float y);
+    Vector2f operator-(const Vector2f& v) const;
+    Vector2f operator+(const Vector2f& v) const;
+    float operator*(const Vector2f& v) const;
+    Vector2f operator*(float a) const;
+    Vector2f normal();
 
 private:
 	float x_;

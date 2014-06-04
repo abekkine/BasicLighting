@@ -14,7 +14,7 @@ SOURCES=Main.cpp \
 
 OBJECTS=$(SOURCES:%.cpp=%.o)
 
-FLAGS=-Wall -Wextra -Werror -Wfatal-errors
+FLAGS=-Wall -Wextra -Werror -Wfatal-errors -DPRINT
 CCLIBS=
 
 all: $(OBJECTS)
