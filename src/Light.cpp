@@ -12,12 +12,17 @@ Light::~Light() {
 }
 
 void Light::randomColor() {
-	// TODO : set random color.
-	color_.set(1.2, 3.4, 5.6);
+
+	// Set random color.
+	float r = Util::randomInRange(0.0, Config::COLOR_MAX);
+	float g = Util::randomInRange(0.0, Config::COLOR_MAX);
+	float b = Util::randomInRange(0.0, Config::COLOR_MAX);
+	color_.set(r, g, b);
 }
 
 void Light::randomLocation() {
 
+	// Set random location.
 	float x = Util::randomInRange(0.0, Config::SCREEN_WIDTH);
 	float y = Util::randomInRange(0.0, Config::SCREEN_HEIGHT);
 

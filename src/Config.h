@@ -9,6 +9,7 @@ namespace Config {
 	extern int MAX_LIGHTS;
 	extern int MIN_BLOCKS;
 	extern int MAX_BLOCKS;
+	extern int COLOR_MAX;
 }
 
 #endif
