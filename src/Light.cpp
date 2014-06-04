@@ -1,7 +1,8 @@
 #include "Light.h"
 
-Light::Light() {
+Light::Light() : location_(0.0, 0.0) {
 	// TODO : ctor
+
 }
 
 Light::~Light() {
@@ -15,6 +16,6 @@ void Light::randomColor() {
 
 void Light::randomLocation() {
 	// TODO : set random location.
-	location_ = -1;
+	location_.set(1.2, 3.4);
 }
 

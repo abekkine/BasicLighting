@@ -7,7 +7,8 @@ SOURCES=Main.cpp \
 		Edge.cpp \
 		EdgeShadow.cpp \
 		Config.cpp \
-		Display.cpp
+		Display.cpp \
+		Vector2f.cpp
 
 OBJECTS=$(SOURCES:%.cpp=%.o)
 

@@ -1,6 +1,8 @@
 #ifndef LIGHT_H
 #define LIGHT_H
 
+#include "Vector2f.h"
+
 class Light {
 
 public:
@@ -12,8 +14,9 @@ public:
 
 private:
 	// Location
-	int location_;
+	Vector2f location_;
 	// RGB Color
+	// TODO : invalid color type.
 	int color_;
 };
 
