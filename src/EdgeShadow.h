@@ -5,7 +5,6 @@
 
 #include "Vector2f.h"
 
-// TODO : Implement properly.
 class EdgeShadow {
 
 public:

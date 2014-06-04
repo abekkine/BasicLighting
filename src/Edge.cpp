@@ -24,7 +24,7 @@ void Edge::end( Vector2f e ) {
 
 EdgeShadow* Edge::castShadow( Light* light ) {
 
-	// TODO : Cast edge shadow from given light.
+	// Cast edge shadow from given light.
     EdgeShadow* shadow = 0;
 
     end_ - begin_;

@@ -5,7 +5,6 @@
 #include "Light.h"
 #include "EdgeShadow.h"
 
-// TODO : Implement properly.
 class Edge {
 
 public:
