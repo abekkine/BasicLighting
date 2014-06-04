@@ -2,6 +2,7 @@
 #define LIGHT_H
 
 #include "Vector2f.h"
+#include "Color.h"
 
 class Light {
 
@@ -16,8 +17,7 @@ private:
 	// Location
 	Vector2f location_;
 	// RGB Color
-	// TODO : invalid color type.
-	int color_;
+	Color color_;
 };
 
 #endif

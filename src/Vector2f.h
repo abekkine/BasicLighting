@@ -4,8 +4,10 @@
 class Vector2f {
 
 public:
+	Vector2f();
 	Vector2f(float x, float y);
 	~Vector2f();
+	
 	void set(float x, float y);
 
 private:

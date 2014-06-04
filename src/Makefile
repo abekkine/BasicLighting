@@ -8,7 +8,8 @@ SOURCES=Main.cpp \
 		EdgeShadow.cpp \
 		Config.cpp \
 		Display.cpp \
-		Vector2f.cpp
+		Vector2f.cpp \
+		Color.cpp
 
 OBJECTS=$(SOURCES:%.cpp=%.o)
 
