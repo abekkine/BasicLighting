@@ -10,6 +10,7 @@ namespace Config {
 	extern int MIN_BLOCKS;
 	extern int MAX_BLOCKS;
 	extern int COLOR_MAX;
+	extern int BLOCK_SIZE;
 }
 
 #endif

@@ -7,4 +7,5 @@ namespace Config {
 	int MIN_BLOCKS = 5;
 	int MAX_BLOCKS = 10;
 	int COLOR_MAX = 10;
+	int BLOCK_SIZE = 50;
 }

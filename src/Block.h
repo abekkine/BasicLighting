@@ -11,9 +11,15 @@ public:
 	Block();
 	~Block();
 
+	void location(int x, int y);
 	void size(int width, int height);
 	void randomLocation();
 	std::vector< Edge* >& getEdges();
+
+private:
+	void deleteEdges();
+	void updateEdges();
+	void setEdges();
 
 private:
 	std::vector< Edge* > edges_;
