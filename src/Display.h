@@ -16,6 +16,8 @@ private:
 public:
 	static Display* Instance();
 	~Display();
+	static void destroy();
+	void resetInstance();
 
 	void clear();
 	void setStencil();
@@ -28,7 +30,7 @@ public:
 	void initShader();
 	void initialize();
 	void deleteShader();
-	void destroy();
+
 	bool quitRequest();
 };
 

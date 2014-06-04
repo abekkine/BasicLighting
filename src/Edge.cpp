@@ -5,7 +5,6 @@ Edge::Edge() {
 }
 
 Edge::~Edge() {
-	// TODO : dtor
 }
 
 EdgeShadow* Edge::castShadow( Light* light ) {

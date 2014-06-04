@@ -11,12 +11,22 @@ Display* Display::Instance() {
 	return instance_;
 }
 
+void Display::resetInstance() {
+	instance_ = 0;
+}
+
+void Display::destroy() {
+
+	Display* instance = Display::Instance();
+	instance->resetInstance();
+	delete instance;
+}
+
 Display::Display() {
 	// TODO : ctor
 }
 
 Display::~Display() {
-	// TODO : dtor
 }
 
 void Display::clear() {
@@ -64,10 +74,6 @@ void Display::initialize() {
 
 void Display::deleteShader() {
 	// TODO : delete shader program.
-}
-
-void Display::destroy() {
-	// TODO : delete & destroy display instance.
 }
 
 bool Display::quitRequest() { 

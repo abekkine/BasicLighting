@@ -12,7 +12,6 @@ Vector2f::Vector2f(float x, float y) {
 }
 
 Vector2f::~Vector2f() {
-	// TODO : ctor
 }
 
 void Vector2f::set(float x, float y) {

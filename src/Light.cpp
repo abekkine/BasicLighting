@@ -4,11 +4,13 @@
 #include "Light.h"
 
 Light::Light() {
-	// TODO : ctor
+
+	// Initially create light with random color and location
+	randomColor();
+	randomLocation();
 }
 
 Light::~Light() {
-	// TODO : dtor
 }
 
 void Light::randomColor() {

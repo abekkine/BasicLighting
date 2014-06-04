@@ -11,7 +11,6 @@ Color::Color(float r, float g, float b) {
 }
 
 Color::~Color() {
-	// TODO : dtor
 }
 
 void Color::set(float r, float g, float b) {

@@ -10,6 +10,7 @@ public:
 	Light();
 	~Light();
 
+private:
 	void randomColor();
 	void randomLocation();
 

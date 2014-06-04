@@ -5,5 +5,4 @@ EdgeShadow::EdgeShadow() {
 }
 
 EdgeShadow::~EdgeShadow() {
-	// TODO : dtor
 }

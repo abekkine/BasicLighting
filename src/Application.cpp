@@ -69,9 +69,6 @@ void Application::setUpObjects() {
 	for (int i = 1; i <= lightCount; i++) {
 
 		Light* new_light = new Light();
-		new_light->randomColor();
-		new_light->randomLocation();
-
 		lights_.push_back( new_light );
 	}
 
@@ -82,9 +79,6 @@ void Application::setUpObjects() {
 	for (int i = 1; i <= blockCount; i++) {
 
 		Block* new_block = new Block();
-		new_block->size(50, 50);
-		new_block->randomLocation();
-
 		blocks_.push_back( new_block );
 	}
 }
