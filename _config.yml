@@ -2,3 +2,4 @@ name: Basic Lighting Dev Blog
 markdown: redcarpet
 pygments: true
 baseurl: /BasicLighting
+future: false
