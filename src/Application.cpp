@@ -13,6 +13,17 @@ Application::Application() {
 
 Application::~Application() {
 
+	// Destroy lights.
+	std::vector< Light* >::iterator iLight;
+	for(iLight = lights_.begin(); iLight != lights_.end(); ++iLight) {
+		delete (*iLight);
+	}
+
+	std::vector< Block* >::iterator iBlock;
+	for(iBlock = blocks_.begin(); iBlock != blocks_.end(); ++iBlock) {
+		delete (*iBlock);
+	}
+
 	display_->destroy();
 }
 
