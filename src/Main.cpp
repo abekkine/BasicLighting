@@ -1,18 +1,21 @@
+#include "Display.h"
 #include "Application.h"
 
-int main() {
+int main(int argc, char* argv[]) {
 
+    Display* display = Display::Instance();
 	Application* app = new Application();	
 
-	app->setUpObjects();
-	app->initialize();
+    app->initialize();
 
-	// Note: since we have no display yet;
-	while (!app->isCloseRequested()) {
-		app->render();
-	}
+    // Open graphics window & mode, etc.
+    display->open(&argc, argv);
 
-	app->cleanup();
+    display->registerApplication(app);
+
+    display->run();
 
 	delete app;
+
+    display->destroy();    
 }

@@ -16,7 +16,7 @@ OBJECTS=$(SOURCES:%.cpp=%.o)
 
 FLAGS=-g -Wall -Wextra -Werror -Wfatal-errors 
 FLAGS+=-O0 -coverage
-CCLIBS=
+CCLIBS=-lglut -lGLEW
 
 all: $(OBJECTS)
 	g++ $(FLAGS) -o $(TARGET) $(OBJECTS) $(CCLIBS)

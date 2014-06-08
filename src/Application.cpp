@@ -1,5 +1,8 @@
+#include <stdio.h>
+
 #include "Util.h"
 #include "Config.h"
+#include "Display.h"
 
 #include "Application.h"
 
@@ -7,8 +10,6 @@ Application::Application() {
 
 	width_ = Config::SCREEN_WIDTH;
 	height_ = Config::SCREEN_HEIGHT;
-
-	display_ = Display::Instance();
 }
 
 Application::~Application() {
@@ -23,20 +24,15 @@ Application::~Application() {
 	for(iBlock = blocks_.begin(); iBlock != blocks_.end(); ++iBlock) {
 		delete (*iBlock);
 	}
-
-	display_->destroy();
 }
 
 void Application::render() {
-
-	// Clear screen.
-	display_->clear();
 
 	std::vector< Light* >::iterator iLight;
 	for (iLight = lights_.begin(); iLight != lights_.end(); ++iLight) {
 
 		// Start rendering to stencil buffer.
-		display_->setStencil();
+		Display::Instance()->setStencil();
 
 		std::vector< Block* >::iterator iBlock;
 		for (iBlock = blocks_.begin(); iBlock != blocks_.end(); ++iBlock) {
@@ -49,25 +45,22 @@ void Application::render() {
 				EdgeShadow* edge_shadow;
 				edge_shadow = (*iEdge)->castShadow( *iLight );
 
-				// TODO : display_draw_edge_shadow
-				display_->drawEdgeShadow( edge_shadow );
+				// Display edge shadow.
+				Display::Instance()->drawEdgeShadow( edge_shadow );
 
 				delete edge_shadow;
 			}
 		}
 
 		// End rendering to stencil buffer.
-		display_->resetStencil();
+		Display::Instance()->resetStencil();
 
 		// Run shader program for given light.
-		display_->runShader( *iLight );
+		Display::Instance()->runShader( *iLight );
 	}
 
 	// Draw all blocks over the scene.
-	display_->drawBlocks( blocks_ );
-
-	// Refresh display.
-	display_->refresh();
+	Display::Instance()->drawBlocks( blocks_ );
 }
 
 void Application::setUpObjects() {
@@ -95,29 +88,9 @@ void Application::setUpObjects() {
 
 void Application::initialize() {
 
-	// Open graphics window & mode, etc.
-	display_->open();
-
-	// Initialize fragment shader.
-	display_->initShader();
-
-	// Complete graphics initialization.
-	display_->initialize();
+	setUpObjects();
 }
 
-void Application::cleanup() {
 
-	// Delete and free shader program.
-	display_->deleteShader();
-
-	// Delete and destroy display.
-	display_->destroy();
-}
-
-bool Application::isCloseRequested() {
-
-	// Return quit request from display object.
-	return display_->quitRequest();
-}
 
 

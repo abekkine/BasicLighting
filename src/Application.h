@@ -6,7 +6,6 @@
 #include "EdgeShadow.h"
 #include "Light.h"
 #include "Block.h"
-#include "Display.h"
 
 class Application {
 
@@ -15,14 +14,14 @@ public:
 	~Application();
 
 	void render();
-	void setUpObjects();
+	void run();
 	void initialize();
-	void cleanup();
-	bool isCloseRequested();
+
+private:
+	void setUpObjects();
 
 private:
 
-	Display* display_;
 	int width_;
 	int height_;
 	std::vector< Light* > lights_;
