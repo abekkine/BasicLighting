@@ -87,7 +87,7 @@ $ cd report
 $ google-chrome ./index.html
 {% endhighlight %}
 
-You can find link to generated report [here]({{site.baseurl}}/data/report/index.html).
+You can find a link to generated report [here]({{site.baseurl}}/data/report/index.html). We will examine contents of this report in next post.
 
 
 
