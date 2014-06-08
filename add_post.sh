@@ -29,10 +29,12 @@ else
     fi
 fi
 
+DATE=$(date '+%Y-%m-%d')    
+
 if [[ "$DRAFT" == "yes" ]] ; then
-    DATE="30"$(date '+%y-%m-%d')
+    FOLDER=_drafts
 else
-    DATE=$(date '+%Y-%m-%d')    
+    FOLDER=_posts
 fi
 
 TIME=$(date '+%H:%M')
@@ -43,7 +45,7 @@ DASHTITLE=${LOWERTITLE// /-}
 FILENAME=$DATE"-"$DASHTITLE".markdown"
 
 pushd . &> /dev/null
-cd _posts
+cd $FOLDER
 
 echo "---" > $FILENAME
 echo "layout: post" >> $FILENAME
