@@ -78,5 +78,14 @@ void Display::deleteShader() {
 
 bool Display::quitRequest() { 
 	 // TODO return quit request.
-	 return true;
+
+	static int count=1000;
+	bool quit = false;
+
+	count--;
+	if (count < 0) {
+		quit = true;
+	}
+
+	return quit;
 }
