@@ -22,12 +22,6 @@ Block::Block() {
 
 }
 
-Block::Block(int x, int y, int w, int h) {
-
-    location(x, y);
-    size(w, h);
-}
-
 Block::~Block() {
 
 	deleteEdges();

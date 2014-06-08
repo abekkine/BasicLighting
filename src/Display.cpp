@@ -53,7 +53,7 @@ void Display::runShader( Light* light ) {
 
 void Display::drawBlocks( std::vector< Block* >& blocks ) {
 	// TODO : render blocks.
-	blocks.clear();
+	blocks = blocks;
 }
 
 void Display::refresh() {

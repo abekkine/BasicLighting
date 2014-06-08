@@ -8,7 +8,6 @@
 class Edge {
 
 public:
-	Edge();
     Edge(Vector2f b, Vector2f e);
 	~Edge();
 

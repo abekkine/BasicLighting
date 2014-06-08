@@ -5,7 +5,6 @@ class Color {
 
 public:
 	Color();
-	Color(float r, float g, float b);
 	~Color();
 	void set(float r, float g, float b);
 

@@ -5,11 +5,6 @@ Color::Color() {
 	set(1.0, 1.0, 1.0);
 }
 
-Color::Color(float r, float g, float b) {
-	// Set to given color on construction
-	set(r, g, b);
-}
-
 Color::~Color() {
 }
 

@@ -9,7 +9,6 @@ class Block {
 
 public:
 	Block();
-	Block(int x, int y, int w, int h);
 	~Block();
 
 	std::vector< Edge* >& getEdges();

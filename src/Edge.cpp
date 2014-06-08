@@ -1,15 +1,12 @@
 #include "Edge.h"
 
-Edge::Edge() {
-}
-
-Edge::~Edge() {
-}
-
 Edge::Edge(Vector2f b, Vector2f e) {
     
     begin( b );
     end( e );
+}
+
+Edge::~Edge() {
 }
 
 void Edge::begin( Vector2f b ) {
