@@ -51,6 +51,8 @@ void Application::render() {
 
 				// TODO : display_draw_edge_shadow
 				display_->drawEdgeShadow( edge_shadow );
+
+				delete edge_shadow;
 			}
 		}
 
