@@ -5,6 +5,8 @@
 
 #include "Config.h"
 
+#include "Shader.h"
+
 #include "Display.h"
 
 Display* Display::instance_ = 0;
@@ -68,17 +70,30 @@ void Display::resetStencil() {
 
 void Display::drawEdgeShadow( EdgeShadow* edge_shadow ) {
 	// TODO : render shadow edge
-	edge_shadow = edge_shadow;
+	if( edge_shadow != 0 ) {
+		edge_shadow->render();
+	}
+	else {
+		printf("edge_shadow is 0 (zero)\n");
+	}
 }
 
 void Display::runShader( Light* light ) {
 	// TODO : run shader program.
-	light = light;
+	glColor3f( 1.0, 1.0, 1.0 );
+	glPointSize(2.0);
+	glBegin(GL_POINTS);
+		glVertex2f( light->location().X(), light->location().Y() );
+	glEnd();
 }
 
 void Display::drawBlocks( std::vector< Block* >& blocks ) {
 	// TODO : render blocks.
-	blocks = blocks;
+	std::vector< Block* >::iterator iBlock;
+
+	for(iBlock=blocks.begin(); iBlock!=blocks.end(); ++iBlock) {
+		(*iBlock)->render();
+	}
 }
 
 void Display::refresh() {
@@ -122,11 +137,16 @@ void Display::initialize() {
 	glOrtho(0, Config::SCREEN_WIDTH, Config::SCREEN_HEIGHT, 0, 1, -1);
 	glMatrixMode(GL_MODELVIEW);
 
+	// DEBUG
+	glEnable (GL_BLEND);
+	glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	// ENDDEBUG
+
 	glutDisplayFunc(Display::displayCallback);
 	glutKeyboardFunc(Display::keyCallback);
 	glutReshapeFunc(Display::reshapeCallback);
 
-	glClearColor(0.0, 0.0,  0.0, 0.0);
+	glClearColor(0.2, 0.2,  0.2, 0.0);
 }
 
 void Display::deleteShader() {

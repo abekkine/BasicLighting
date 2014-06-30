@@ -12,6 +12,7 @@ public:
 	~Block();
 
 	std::vector< Edge* >& getEdges();
+	void render();
 
 private:
 	void location(int x, int y);

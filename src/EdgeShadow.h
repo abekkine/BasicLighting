@@ -12,6 +12,7 @@ public:
 	~EdgeShadow();
 
     void addVertex(Vector2f vertex);
+    void render();
 
 private:
     std::vector< Vector2f > vertices_;

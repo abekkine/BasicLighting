@@ -14,6 +14,8 @@ public:
     float operator*(const Vector2f& v) const;
     Vector2f operator*(float a) const;
     Vector2f normal();
+    float X();
+    float Y();
 
 private:
 	float x_;

@@ -25,7 +25,7 @@ all: $(OBJECTS)
 	g++ $(FLAGS) -c -o $*.o $<
 
 clean:
-	$(RM) -rf $(TARGET) *.o *~ core* *.gcov *.gcda *.gcno *.info report
+	$(RM) -rf $(TARGET) *.o *~ core* *.gcov *.gcda *.gcno *.info *.log report
 
 coverage: all
 	./$(TARGET)

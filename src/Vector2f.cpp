@@ -20,6 +20,14 @@ void Vector2f::set(float x, float y) {
 	y_ = y;
 }
 
+float Vector2f::X() {
+    return x_;
+}
+
+float Vector2f::Y() {
+    return y_;
+}
+
 Vector2f Vector2f::operator-(const Vector2f& v) const {
     return Vector2f(x_ - v.x_, y_ - v.y_);
 }

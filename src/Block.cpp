@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <assert.h>
 
+#include <GL/freeglut.h>
+
 #include "Util.h"
 #include "Config.h"
 
@@ -58,6 +60,17 @@ void Block::setEdges() {
     edges_.push_back( new Edge(B, C) );
     edges_.push_back( new Edge(C, D) );
     edges_.push_back( new Edge(D, A) );
+}
+
+void Block::render() {
+
+    glColor3f(0.0, 0.0, 0.0);
+    glBegin(GL_QUADS);
+        glVertex2f(x_, y_);
+        glVertex2f(x_ + width_, y_);
+        glVertex2f(x_ + width_, y_ + height_);
+        glVertex2f(x_, y_ + height_);
+    glEnd();
 }
 
 void Block::location(int x, int y) {
