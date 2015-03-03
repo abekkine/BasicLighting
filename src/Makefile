@@ -14,9 +14,9 @@ SOURCES=Main.cpp \
 
 OBJECTS=$(SOURCES:%.cpp=%.o)
 
-FLAGS=-g -Wall -Wextra -Werror -Wfatal-errors 
+FLAGS=-g -Wall -Wextra -Werror -Wfatal-errors
 FLAGS+=-O0 -coverage
-CCLIBS=-lglut -lGLEW
+CCLIBS=-lglut -lGL -lGLEW
 
 all: $(OBJECTS)
 	g++ $(FLAGS) -o $(TARGET) $(OBJECTS) $(CCLIBS)
@@ -30,4 +30,5 @@ clean:
 coverage: all
 	./$(TARGET)
 	lcov -o report.info -c -d .
-	genhtml -o report --no-branch-coverage report.info 
+	genhtml -o report --no-branch-coverage report.info
+
